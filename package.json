@@ -18,7 +18,8 @@
     "predeploy:example": "cd example && yarn install && yarn run build",
     "deploy:example": "gh-pages -d example/build",
     "gh-pages": "catalog build docs",
-    "deploy": "catalog build docs && gh-pages -d docs/build",
+    "predeploy": "catalog build --public-url=/react-shepherd/ docs",
+    "deploy": "gh-pages -d docs/build",
     "linter": "eslint --fix src/**/*.{js,jsx}"
   },
   "dependencies": {
