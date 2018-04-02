@@ -15,11 +15,9 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy:example": "cd example && yarn install && yarn run build",
-    "deploy:example": "gh-pages -d example/build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build",
     "gh-pages": "catalog build docs",
-    "predeploy": "catalog build --public-url=/react-shepherd/ docs",
-    "deploy": "gh-pages -d docs/build",
     "linter": "eslint --fix src/**/*.{js,jsx}"
   },
   "dependencies": {
@@ -34,13 +32,14 @@
   },
   "devDependencies": {
     "react-github-corner": "2.1.0",
-
+    "react-styleguidist": "7.0.1",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "catalog": "3.4.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
-    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

@@ -7,15 +7,10 @@ import { Consumer } from "./Guide";
 
 const Overlay = styled.div`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
   border-radius: 10px;
-  padding: 5%;
   transition: all 0.4s ease-in;
   background-color: ${props =>
     props.overlay && props.visible ? "rgba(0, 0, 0, 0.8)" : "transparent"};
@@ -36,6 +31,7 @@ const Wrapped = compose(
   withState("visible", "setVisible", false),
   lifecycle({
     componentWillMount() {
+      console.warn(this.props.context, this.props.context.className);
       const id = randomClassName();
       this.setState({ uniqueId: id });
       this.step = this.props.context.tour.addStep({
@@ -43,7 +39,7 @@ const Wrapped = compose(
         title: this.props.title || "",
         text: this.props.text || "NO text  was passed",
         attachTo: `.${id} ${this.props.position || "middle"}`,
-        classes: this.context.className,
+        classes: this.props.context.className,
         beforeShowPromise: () => {
           this.props.setVisible(true);
           this.props.context.setOverlay(`.${id}`);

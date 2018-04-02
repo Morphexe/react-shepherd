@@ -1,17 +1,10 @@
-import React from "react";
-import { Guide, Step } from "/react-shepherd";
-import "tether-shepherd/dist/css/shepherd-theme-dark.css";
-import styled from "styled-components";
+Import the theme file from "/tether-shepherd/dist/css/shepherd-theme-dark.css"
 
-const Container = styled.div`
-  width: 100px;
-  height: 100px;
-  background: papayawhip;
-`;
-
-export default () => (
+```javascript
+<div style={{ height: "100px", width: "100%" }}>
   <Guide className="shepherd-theme-dark">
-    <Container>
+    <div style={{ position: "relative" }}>
+      Something
       <Step
         order={1}
         title="Welcome"
@@ -19,14 +12,17 @@ export default () => (
         position="bottom"
         show
       />
-    </Container>
-    <Container>
+    </div>
+    <div style={{ position: "relative", width: "100px" }}>
       <Step
         order={2}
         title="Next Step"
         text="Check this div, it has important  content too"
         position="top"
       />
-    </Container>
+      Other Important thing
+    </div>
+    <button />
   </Guide>
-);
+</div>
+```
