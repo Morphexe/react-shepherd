@@ -9,16 +9,17 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "start:docs": "catalog start docs",
+    "start:docs": "styleguidist server",
     "testCi": "CI=1 react-scripts test --env=jsdom",
     "test": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
-    "gh-pages": "catalog build docs",
-    "linter": "eslint --fix src/**/*.{js,jsx}"
+    "predeploy:example": "cd example && yarn install && yarn run build",
+    "deploy:example": "gh-pages -d example/build",
+    "linter": "eslint --fix src/**/*.{js,jsx}",
+    "predeploy" : "styleguidist build",
+    "deploy" : "gh-pages -d styleguide"
   },
   "dependencies": {
     "tether-shepherd": "1.8.1",

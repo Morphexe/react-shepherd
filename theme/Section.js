@@ -18,12 +18,12 @@ export function SectionsRenderer({ classes, children }) {
   return (
     <div>
       <div className={classes.headingSpacer}>
-        <Heading level={1}>Example Components</Heading>
+        <Heading level={1}>React Shepherd</Heading>
         <p className={classes.descriptionText}>
-          These are the greatest components
+          Declarative Guide/Tour for React Applications based on shepherd.js
         </p>
       </div>
-       <DefaultSections>{children}</DefaultSections> 
+      <DefaultSections>{children}</DefaultSections>
     </div>
   );
 }

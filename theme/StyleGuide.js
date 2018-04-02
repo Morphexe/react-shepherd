@@ -72,21 +72,15 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children }) {
             <nav className={classes.nav}>
               <a
                 className={classes.headerLink}
-                href="https://github.com/styleguidist/react-styleguidist/tree/master/docs"
+                href="https://github.com/morphexe/react-shepherd/tree/master/docs"
               >
                 Docs
               </a>
               <a
                 className={classes.headerLink}
-                href="https://github.com/styleguidist/react-styleguidist"
+                href="https://github.com/morphexe/react-shepherdt"
               >
                 GitHub
-              </a>
-              <a
-                className={classes.headerLink}
-                href="https://gitter.im/styleguidist/styleguidist"
-              >
-                Gitter
               </a>
             </nav>
           </div>
