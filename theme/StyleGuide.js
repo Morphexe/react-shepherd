@@ -78,7 +78,7 @@ export function StyleGuideRenderer({ classes, title, homepageUrl, children }) {
               </a>
               <a
                 className={classes.headerLink}
-                href="https://github.com/morphexe/react-shepherdt"
+                href="https://github.com/morphexe/react-shepherd"
               >
                 GitHub
               </a>

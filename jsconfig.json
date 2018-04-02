@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "checkJs": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*.js"]
+}
