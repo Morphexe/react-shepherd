@@ -1,6 +1,6 @@
 {
   "name": "react-shepherd",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Declarative Guide/Walktrhough component for React",
   "author": "Morphexe",
   "license": "MIT",
@@ -9,21 +9,34 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "test": "CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "start:docs": "catalog start docs",
+    "testCi": "CI=1 react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "predeploy:example": "cd example && yarn install && yarn run build",
+    "deploy:example": "gh-pages -d example/build",
+    "gh-pages": "catalog build docs",
+    "deploy": "catalog build docs && gh-pages -d docs/build",
+    "linter": "eslint --fix src/**/*.{js,jsx}"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tether-shepherd": "1.8.1",
+    "styled-components": "3.2.5",
+    "recompose": "0.26.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.3.0",
+    "react-dom": "^15.0.0 || ^16.3.0"
   },
   "devDependencies": {
+    "react-github-corner": "2.1.0",
+
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "catalog": "3.4.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -40,9 +53,8 @@
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-peer-deps-external": "^2.0.0",
     "rollup-plugin-postcss": "^1.1.0",
-    "rollup-plugin-url": "^1.3.0"
+    "rollup-plugin-url": "^1.3.0",
+    "eslint-plugin-sort-imports-es6-autofix": "0.3.0"
   },
-  "files": [
-    "dist"
-  ]
+  "files": ["dist"]
 }
